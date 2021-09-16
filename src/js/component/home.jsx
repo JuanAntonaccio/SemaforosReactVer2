@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
+const [prendo, setPrendo] = useState("red");
+//let prendo = "red";
+//utilice este home para encontrar el error
 const Home = () => {
 	return (
-		<div>
-			<h1>Semaforos!</h1>
+		<div className="container">
+			<div
+				onClick={() => setPrendo("red")}
+				className={
+					"luz roja" + (prendo == "red" ? " brillo" : "")
+				}></div>
+			<div
+				//onClick={() => {
+				//	setPrendo("yellow");
+				//}}
+				className={
+					"luz amarilla" + (prendo == "yellow" ? " brillo" : "")
+				}></div>
+			<div
+				//onClick={() => {
+				//	setPrendo("green");
+				//}}
+				className={
+					"luz verde" + (prendo == "green" ? " brillo" : "")
+				}></div>
 		</div>
 	);
 };
